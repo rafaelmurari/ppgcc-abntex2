@@ -69,7 +69,7 @@ Universidade Estadual Paulista "Júlio de Mesquita Filho", Câmpus de [Inserir
 cidade].} 
 ```
 
-2 - Altere os dados da capa (Câmpus), folha de rosto (Financiadora) e (Financiadora, Membros da Banca e Data da Defesa), encontrados no arquivo dissertacao.sty.
+2 - Altere os dados da capa (Câmpus), folha de rosto (Financiadora) e folha de aprovação (Financiadora, Membros da Banca e Data da Defesa), encontrados no arquivo dissertacao.sty.
 
 3 - Insira o texto de sua dissertação nos arquivos encontrados no diretório chapters.
 
