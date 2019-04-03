@@ -40,6 +40,14 @@ Por fim, as modificações realizadas no modelo canônico abnTeX2 estão contida
 
 # Modo de Uso
 
+Para utilizar este template basta clonar o repositório e executar o comando make, conforme as instruções abaixo.
+
+```bash
+$ git clone https://github.com/rafaelmurari/ppgcc-abntex2.git
+$ cd ppgcc-abntex2
+$ make
+```
+
 A seguir são detalhados os passos para personalização deste modelo.
 
 1 - Atualize as seguintes informações encontradas no arquivo dissertacao.tex. 
