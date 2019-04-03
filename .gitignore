@@ -1,0 +1,12 @@
+*.log
+*.aux
+*.bbl
+*.blg
+*.bib.bak
+*.out
+*.toc
+*.idx
+*.lot
+*.lof
+*.loa
+dissertacao.pdf

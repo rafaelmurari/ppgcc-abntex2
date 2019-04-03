@@ -1,0 +1,334 @@
+%%
+%% Customizações do abnTeX2 (http://abnTeX2.googlecode.com) para o Programa de
+%% Pós-Graduação em Ciência da Computação - PPGCC, Universidade Estadual
+%% Paulista - UNESP.
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is Rafael Murari, rafaelpmurari@gmail.com
+%%
+%% Further information about abnTeX2 are available on https://github.com/abntex/abntex2
+%%
+
+% ---
+% INICIO DAS CUSTOMIZACOES PARA O PPGCC - UNESP 
+% ---
+
+\usepackage{float}      % ajuste de posicionamento de figuras e tabelas
+\usepackage{xspace}     % espaçamento
+\usepackage{adjustbox}  % ajuste de tamanho das tabelas
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{amsmath}
+\usepackage{pdfpages}
+
+%-----------------------
+% Algoritmos
+%-----------------------
+
+\usepackage[noend]{algpseudocode}
+\usepackage[plain]{algorithm}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\sffamily\bfseries,
+  stringstyle=\ttfamily,
+	language=C,
+	showstringspaces=false,
+  tabsize=2,
+	breaklines=true,
+	morecomment=[l]{//},
+	captionpos=b,
+%	frame=tb,
+	aboveskip=\baselineskip,
+	numberbychapter=false,
+	numberstyle=\numberwithcolon,
+	numbers=left,
+	xleftmargin=2.8em,
+	framexleftmargin=2.8em,
+	abovecaptionskip=0.6em,
+	lineskip=-0.05ex,
+	literate={á}{{\'a}}1 {à}{{\`a}}1 {ã}{{\~a}}1 {é}{{\'e}}1 {ê}{{\^e}}1
+	{í}{{\'i}}1 {ó}{{\'o}}1 {õ}{{\~o}}1 {ú}{{\'u}}1 {ç}{{\c{c}}}1,
+}
+
+\renewcommand*{\lstlistingname}{Algoritmo}
+\newcommand\numberwithcolon[1]{\scriptsize\ttfamily\selectfont#1$\colon$}
+%-----------------------
+% Modificações
+%-----------------------
+
+% Renomeação
+\addto\captionsbrazil{
+  \renewcommand{\listfigurename}{Lista de Figuras}
+  \renewcommand{\listtablename}{Lista de Tabelas}
+  \renewcommand{\listadesiglasname}{Lista de Abreviaturas}
+  \renewcommand{\listadesimbolosname}{Lista de Símbolos}
+}
+
+\renewcommand{\baselinestretch}{1.5}  % espaçamento entre as linhas
+
+% Reduz a fonte das legendas de figuras e tabelas
+\captionnamefont{\small}
+\captiontitlefont{\small}
+
+\captiondelim{: }  % define ":" como delimitador entre as figuras e suas descrições
+
+% Conteúdo da tabela
+\newcommand{\cell}[1]{{\ttfamily \scriptsize #1}}
+
+\newcommand{\imgref}[1]{%
+	\begin{minipage}[h][1.8\fontcharwd\font`\B][c]{1.8\fontcharht\font`\B}%
+		%\centering%
+		%\vfill%
+		\includegraphics[height=1.7\fontcharht\font`\B]{images/#1.eps}%
+		%\vfill%
+	\end{minipage}%
+}
+
+%-----------------------
+% Definições
+%-----------------------
+
+\def\HDD{\textit{Hard Disk Drive}\xspace}
+\def\SSD{\textit{Solid-State Drive}\xspace}
+\def\DRAM{\textit{Dynamic Random Access Memory}\xspace}
+\def\API{\textit{Application Programming Interface}\xspace}
+
+%-----------------------
+% Capa
+%-----------------------
+
+\renewcommand{\imprimircapa}{
+  \begin{capa}
+    \center
+    \vspace*{0.5mm}
+		\begin{minipage}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{images/unesplogo.pdf}
+		\end{minipage}
+		\hspace{1ex}
+		\begin{minipage}{0.5\textwidth}
+		\textbf{
+		UNIVERSIDADE ESTADUAL PAULISTA\\
+		"JÚLIO DE MESQUITA FILHO"\\
+		Câmpus de [Inserir Cidade]}
+		\end{minipage}
+
+    \vspace*{3cm}
+    
+    {\Large\imprimirautor}
+
+    \vspace*{2.5cm}
+    \LARGE\textbf\imprimirtitulo
+    \vfill
+    
+    \textnormal{\large{\imprimirlocal}}
+    
+    \vspace*{-4mm}
+    \textnormal{\large\imprimirdata}
+    
+    \vspace*{1cm}
+  \end{capa}
+}
+
+
+%-----------------------
+% Folha de Rosto
+%-----------------------
+
+\renewcommand{\folhaderostocontent}{
+  \begin{center}
+
+  \vspace*{2cm}
+  {\Large\imprimirautor}
+
+  \vspace*{\fill}%\vspace*{\fill}
+  \begin{center}
+  \Large\textbf\imprimirtitulo
+  \end{center}
+  \vspace*{\fill}
+
+  \setlength{\rightskip}{0.2cm}
+  \hfill\Large\imprimirorientadorRotulo~\imprimirorientador\par
+
+  \vspace*{\fill}
+
+  \abntex@ifnotempty{\imprimirpreambulo}{
+    \hspace{.45\textwidth}
+    \begin{minipage}{.5\textwidth}
+      \SingleSpacing
+       \normalsize\imprimirpreambulo
+			 \\ \\
+			 \normalsize{Financiadora: ...}
+    \end{minipage}
+    \vspace*{\fill}
+  }
+
+  \begin{center}
+    \textnormal{\large{\imprimirlocal}}
+
+    \vspace*{-4mm}
+    \textnormal{\large{\imprimirdata}}
+  \end{center}
+  \vspace*{1cm}
+
+  \end{center}
+}
+
+%-----------------------
+% Folha de Aprovação
+%-----------------------
+
+\newcommand{\imprimirfolhadeaprovacao}{
+	\begin{folhadeaprovacao}
+
+		\begin{center}
+	%    {\ABNTEXchapterfont\large\imprimirautor}
+			{\Large\imprimirautor}
+
+			\vspace*{\fill}\vspace*{\fill}
+			\begin{center}
+	%      \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+					\Large\textbf\imprimirtitulo
+			\end{center}
+			\vspace*{\fill}
+			
+			\hspace{.45\textwidth}
+			\begin{minipage}{.5\textwidth}
+					\imprimirpreambulo
+					\\ \\
+					Financiadora: ... \\
+			\end{minipage}%
+			\vspace*{\fill}
+		 
+			{\large{Banca Examinadora}}
+			\vspace*{\fill}
+
+			\begin{flushright}
+				\begin{itemize}
+					\item Prof. Dr. ... (Orientador)\\
+								Departamento de ...\\
+								Universidade ...\\
+				
+					\item Prof. Dr. ...\\
+								Instituto de ...\\
+								Universidade ...\\
+
+					\item Prof. Dr. ...\\
+								Departamento de ...\\
+								Universidade ...
+				\end{itemize}
+			\end{flushright}
+			\vspace*{\fill}
+
+		\end{center}
+					
+		\begin{center}
+			{\normalfont{\large{\imprimirlocal}}}
+			
+			\vspace*{2mm}
+			{\normalfont{\large{28 de fevereiro de 2019}}}
+			\vspace*{1cm}
+		\end{center}
+		
+	\end{folhadeaprovacao}
+}
+
+%-----------------------
+% Sumário
+%-----------------------
+% Remove o grande espaço entre a numeração e os capítulos e identa o sumário
+\makeatletter
+\renewcommand*\l@chapter[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \addpenalty{-\@highpenalty}%
+    \vskip 1.0em \@plus\p@
+    \def\@chapapp@head{}
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak
+      \xleaders\hbox{$\m@th
+        \mkern \@dotsep mu\hbox{.}\mkern \@dotsep
+        mu$}\hfill%
+      \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+      \penalty\@highpenalty
+    \endgroup
+  \fi}
+\renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{2.3em}}
+\renewcommand{\l@subsection}{\@dottedtocline{2}{3.8em}{3.2em}}
+\renewcommand{\l@subsubsection}{\@dottedtocline{3}{7.0em}{4.1em}}
+\makeatother
+
+% Modifica o padrão de caixa alta dos capítulos no sumário
+\makeatletter
+  \settocpreprocessor{chapter}{%
+    \let\tempf@rtoc\f@rtoc%
+    \def\f@rtoc{%
+      {\tempf@rtoc}}%
+  }
+\makeatother
+
+% Modificações referentes ao pacote algorithm e algpseudocode
+\makeatletter                                                                   
+	\renewcommand{\ALG@beginalgorithmic}{\footnotesize}
+	\renewcommand{\Statex}{\vspace{0.2cm}}
+	\renewcommand{\ALG@name}{Algoritmo}
+%	\algrenewcommand\ALG@beginalgorithmic{\ttfamily\footnotesize}
+\makeatother
+
+% Inclusão dos listings na lista de algoritmos
+\makeatletter
+\patchcmd{\lst@MakeCaption}{\addcontentsline{lol}}{\addcontentsline{loa}}{}{}
+\patchcmd{\lst@MakeCaption}{\addcontentsline{lol}}{\addcontentsline{loa}}{}{}
+\AtBeginDocument{%
+  \let\c@lstlisting\c@algorithm
+  \let\thelstlisting\thealgorithm
+}
+\makeatother
+
+% Ajuste de espaçamento entre as entradas presentes na lista de abreviaturas
+\renewenvironment{siglas}{%
+  \pretextualchapter{\listadesiglasname}
+  \begin{symbols}
+  \setlength{\itemsep}{-8pt}
+}{%
+  \end{symbols}
+  \cleardoublepage
+}
+
+% Ajuste de espaçamento entre as entradas presentes na lista de simbolos
+\renewenvironment{simbolos}{%
+  \pretextualchapter{\listadesimbolosname}
+  \begin{symbols}
+  \setlength{\itemsep}{-8pt}
+}{%
+  \end{symbols}
+  \cleardoublepage
+}
+
+\makeatletter
+\algrenewcommand\ALG@beginalgorithmic{\footnotesize}
+\makeatother
+
+% ---
+% FIM DAS CUSTOMIZACOES PARA O PPGCC - UNESP 
+% ---

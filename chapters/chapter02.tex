@@ -1,0 +1,22 @@
+%------------------------------------------------------------------------------
+\chapter[Fundamentação Teórica]{Fundamentação Teórica}
+\label{chap:fundamentacao}
+%------------------------------------------------------------------------------
+
+\lipsum[4 - 6]
+
+\begin{table}[t]
+	\centering
+ 	\caption{Definição dos estados das linhas de cache pelo Protocolo MESI.}
+ 	\label{tab:mesi}
+	\begin{tabular}{|l|l|}
+	\hline
+	\multicolumn{1}{|c|}{\textbf{Estado}} & \multicolumn{1}{c|}{\textbf{Descrição}}         \\ \hline
+	Modificado 		& A linha se encontra somente na cache corrente e seu valor foi alterado  \\ \hline
+	Exclusivo  		& A linha se encontra somente na cache corrente e não sofreu alterações   \\ \hline
+	Compartilhado & A linha é compartilhada com as demais caches	                          \\ \hline
+	Inválido      & A linha é inválida, seu valor foi alterado em alguma outra cache        \\ \hline
+	\end{tabular}
+\end{table}
+
+\lipsum[7 - 10]
