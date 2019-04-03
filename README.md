@@ -65,4 +65,4 @@ cidade].}
 
 3 - Insira o texto de sua dissertação nos arquivos encontrados no diretório chapters.
 
-4 - Atualize a seção de Agradecimentos presente no arquivo dissertacao.tex. **NOTA: discentes que foram bolsistas durante o curso devem inserir uma nota exigida pela CAPES e FAPESP. Esta nota se encontra no modelo disponibilizado pela Biblioteca (link acima).**
+4 - Atualize a seção de Agradecimentos presente no arquivo dissertacao.tex. **OBS: discentes que foram bolsistas durante o curso devem inserir uma nota exigida pela CAPES e FAPESP. Esta nota se encontra no modelo disponibilizado pela Biblioteca (link acima).**
