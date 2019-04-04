@@ -75,4 +75,4 @@ cidade].}
 
 4 - Insira as referências bibliográficas no arquivo references.bib.
 
-5 - Atualize a seção de Agradecimentos presente no arquivo dissertacao.tex. **OBS: discentes que foram bolsistas durante o curso devem inserir uma nota exigida pela CAPES e FAPESP. Esta nota se encontra no modelo disponibilizado pela Biblioteca (link acima).**
+5 - Atualize a seção de agradecimentos presente no arquivo dissertacao.tex. **OBS: discentes que foram bolsistas durante o curso devem inserir uma nota exigida pela CAPES e FAPESP. Esta nota se encontra no modelo disponibilizado pela Biblioteca (link acima).**
