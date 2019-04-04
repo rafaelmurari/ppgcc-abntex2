@@ -2,7 +2,7 @@
 
 Template em LaTeX para elaboração da Dissertação de Mestrado do Programa de Pós-Graduação em Ciência da Computação da Universidade Estadual Paulista (UNESP).
 
-Este template é baseado no modelo disponibilizado pela Biblioteca de São José de Rio Preto, acessível em <https://www.ibilce.unesp.br/#!/biblioteca/servicos-oferecidos/normalizacao/estrutura-do-trabalho-academico/>.
+Este template é baseado no modelo disponibilizado pela Biblioteca de São José de Rio Preto, acessível em <https://www.ibilce.unesp.br/#!/biblioteca/servicos-oferecidos/normalizacao/estrutura-do-trabalho-academico/>. **Verifique o modelo original pois há instruções relevantes para elaboração da dissertação.**
 
 Segue abaixo a organização deste repositório.
 
