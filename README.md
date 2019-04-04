@@ -30,13 +30,13 @@ Segue abaixo a organização deste repositório.
 └── **style**  
 &nbsp; &nbsp; &nbsp; └── dissertacao.sty
 
-O diretório chapters contém os capítulos inseridos na dissertação. Caso seja necessário inserir ou remover capítulos, basta atualizar as entradas `\include{chapters/chapterXX}` presentes na parte textual do arquivo dissertacao.tex.
+* O diretório chapters contém os capítulos inseridos na dissertação. Caso seja necessário inserir ou remover capítulos, basta atualizar as entradas `\include{chapters/chapterXX}` presentes na parte textual do arquivo dissertacao.tex.
 
-O diretório metadata armazena a ficha catalográfica, necessária para a versão final (após a defesa) a ser submetida para o Repositório da UNESP. Para realizar a inserção deste documento, basta remover os comentários da respectiva seção encontrada no arquivo dissertacao.tex.
+* O diretório metadata armazena a ficha catalográfica, necessária para a versão final (após a defesa) a ser submetida para o Repositório da UNESP. Para realizar a inserção deste documento, basta remover os comentários da respectiva seção encontrada no arquivo dissertacao.tex.
 
-Os diretórios code, images e results armazenam os algoritmos, imanges e resultados, respectivamente, inseridos na dissertação.
+* Os diretórios code, images e results armazenam os algoritmos, imagens e resultados, respectivamente, inseridos na dissertação.
 
-Por fim, as modificações realizadas no modelo canônico abnTeX2 estão contidas no diretório style.
+* As modificações realizadas no modelo canônico abnTeX2 estão contidas no diretório style.
 
 # Modo de Uso
 
