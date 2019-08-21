@@ -55,7 +55,7 @@ A seguir são detalhados os passos para personalização deste modelo.
 ```latex
 \titulo{Inserir o Título do Trabalho}                                           
 \autor{Nome do Autor}                                                           
-\local{Inserir Cidade - SP}                                                     
+\local{Inserir Cidade}
 \data{2019}                                                                     
 \orientador{Prof. Dr. ...}                                                      
 \instituicao{%                                                                  
