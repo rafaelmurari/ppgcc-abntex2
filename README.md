@@ -35,7 +35,7 @@ Segue abaixo a organização deste repositório.
 ├── references.bib  
 ├── **results**  
 └── **style**  
-&nbsp; &nbsp; &nbsp; |── definitions.tex  
+&nbsp; &nbsp; &nbsp; &nbsp; |── definitions.tex  
 &nbsp; &nbsp; &nbsp; └── monograph.sty
 
 * O diretório chapters contém o resumo, capítulos, apêndices e anexos inseridos
