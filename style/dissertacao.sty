@@ -35,41 +35,19 @@
 \usepackage{amsmath}
 \usepackage{pdfpages}
 
+
 %-----------------------
-% Algoritmos
+% Definições
 %-----------------------
 
-\usepackage[noend]{algpseudocode}
-\usepackage[plain]{algorithm}
+\def\HDD{\textit{Hard Disk Drive}\xspace}
+\def\SSD{\textit{Solid-State Drive}\xspace}
+\def\DRAM{\textit{Dynamic Random Access Memory}\xspace}
+\def\API{\textit{Application Programming Interface}\xspace}
 
-\usepackage{listings}
-\lstset{
-  basicstyle=\ttfamily\footnotesize,
-  keywordstyle=\sffamily\bfseries,
-  stringstyle=\ttfamily,
-	language=C,
-	showstringspaces=false,
-  tabsize=2,
-	breaklines=true,
-	morecomment=[l]{//},
-	captionpos=b,
-%	frame=tb,
-	aboveskip=\baselineskip,
-	numberbychapter=false,
-	numberstyle=\numberwithcolon,
-	numbers=left,
-	xleftmargin=2.8em,
-	framexleftmargin=2.8em,
-	abovecaptionskip=0.6em,
-	lineskip=-0.05ex,
-	literate={á}{{\'a}}1 {à}{{\`a}}1 {ã}{{\~a}}1 {é}{{\'e}}1 {ê}{{\^e}}1
-	{í}{{\'i}}1 {ó}{{\'o}}1 {õ}{{\~o}}1 {ú}{{\'u}}1 {ç}{{\c{c}}}1,
-}
 
-\renewcommand*{\lstlistingname}{Algoritmo}
-\newcommand\numberwithcolon[1]{\scriptsize\ttfamily\selectfont#1$\colon$}
 %-----------------------
-% Modificações
+% Modificações em Geral
 %-----------------------
 
 % Renomeação
@@ -100,14 +78,6 @@
 	\end{minipage}%
 }
 
-%-----------------------
-% Definições
-%-----------------------
-
-\def\HDD{\textit{Hard Disk Drive}\xspace}
-\def\SSD{\textit{Solid-State Drive}\xspace}
-\def\DRAM{\textit{Dynamic Random Access Memory}\xspace}
-\def\API{\textit{Application Programming Interface}\xspace}
 
 %-----------------------
 % Capa
@@ -189,6 +159,7 @@
   \end{center}
 }
 
+
 %-----------------------
 % Folha de Aprovação
 %-----------------------
@@ -248,6 +219,11 @@
 	\end{folhadeaprovacao}
 }
 
+
+%-----------------------
+% Anexos
+%-----------------------
+% Definição da seção de anexos
 \makeatletter
 \newcommand\annex{\par
   \setcounter{chapter}{0}%
@@ -256,6 +232,7 @@
   \gdef\thechapter{\@Alph\c@chapter}}
 \makeatother
 
+% Redefine o environment para inserção correta dos nomes no sumário
 \renewenvironment{anexosenv}{%
  \cftinserthook{toc}{AAA}
  \PRIVATEapendiceconfig{\anexoname}{\anexosname}
@@ -266,6 +243,7 @@
  \setboolean{abntex@apendiceousecao}{false}
  \bookmarksetup{startatroot}
 }
+
 
 %-----------------------
 % Sumário
@@ -296,6 +274,7 @@
 \renewcommand{\l@subsection}{\@dottedtocline{2}{3.8em}{3.2em}}
 \renewcommand{\l@subsubsection}{\@dottedtocline{3}{7.0em}{4.1em}}
 
+% Insere a palavra APÊNDICE antes de cada apêndice presente no sumário
 \newcommand\appendix@chapter[1]{%
     \refstepcounter{chapter}%
     \def\app@ct{APÊNDICE \@Alph\c@chapter \space - #1}
@@ -306,6 +285,7 @@
 \let\orig@chapter\chapter
 \g@addto@macro\appendix{\let\chapter\appendix@chapter}
 
+% Insere a palavra ANEXO antes de cada anexo presente no sumário
 \newcommand\annex@chapter[1]{%
     \refstepcounter{chapter}%
     \def\app@ct{ANEXO \@Alph\c@chapter \space - #1}
@@ -326,24 +306,10 @@
   }
 \makeatother
 
-% Modificações referentes ao pacote algorithm e algpseudocode
-\makeatletter                                                                   
-	\renewcommand{\ALG@beginalgorithmic}{\footnotesize}
-	\renewcommand{\Statex}{\vspace{0.2cm}}
-	\renewcommand{\ALG@name}{Algoritmo}
-%	\algrenewcommand\ALG@beginalgorithmic{\ttfamily\footnotesize}
-\makeatother
 
-% Inclusão dos listings na lista de algoritmos
-\makeatletter
-\patchcmd{\lst@MakeCaption}{\addcontentsline{lol}}{\addcontentsline{loa}}{}{}
-\patchcmd{\lst@MakeCaption}{\addcontentsline{lol}}{\addcontentsline{loa}}{}{}
-\AtBeginDocument{%
-  \let\c@lstlisting\c@algorithm
-  \let\thelstlisting\thealgorithm
-}
-\makeatother
-
+%-----------------------
+% Lista de Abreviaturas
+%-----------------------
 % Ajuste de espaçamento entre as entradas presentes na lista de abreviaturas
 \renewenvironment{siglas}{%
   \pretextualchapter{\listadesiglasname}
@@ -354,6 +320,10 @@
   \cleardoublepage
 }
 
+
+%-----------------------
+% Lista de Símbolos
+%-----------------------
 % Ajuste de espaçamento entre as entradas presentes na lista de simbolos
 \renewenvironment{simbolos}{%
   \pretextualchapter{\listadesimbolosname}
@@ -364,8 +334,58 @@
   \cleardoublepage
 }
 
+
+%-----------------------
+% Algoritmos
+%-----------------------
+
+\usepackage[noend]{algpseudocode}
+\usepackage[plain]{algorithm}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\sffamily\bfseries,
+  stringstyle=\ttfamily,
+	language=C,
+	showstringspaces=false,
+  tabsize=2,
+	breaklines=true,
+	morecomment=[l]{//},
+	captionpos=b,
+%	frame=tb,
+	aboveskip=\baselineskip,
+	numberbychapter=false,
+	numberstyle=\numberwithcolon,
+	numbers=left,
+	xleftmargin=2.8em,
+	framexleftmargin=2.8em,
+	abovecaptionskip=0.6em,
+	lineskip=-0.05ex,
+	literate={á}{{\'a}}1 {à}{{\`a}}1 {ã}{{\~a}}1 {é}{{\'e}}1 {ê}{{\^e}}1
+	{í}{{\'i}}1 {ó}{{\'o}}1 {õ}{{\~o}}1 {ú}{{\'u}}1 {ç}{{\c{c}}}1,
+}
+
+\renewcommand*{\lstlistingname}{Algoritmo}
+\newcommand\numberwithcolon[1]{\scriptsize\ttfamily\selectfont#1$\colon$}
+
+
+% Modificações referentes ao pacote algorithm e algpseudocode
 \makeatletter
-\algrenewcommand\ALG@beginalgorithmic{\footnotesize}
+	\renewcommand{\ALG@beginalgorithmic}{\footnotesize}
+	\renewcommand{\Statex}{\vspace{0.2cm}}
+	\renewcommand{\ALG@name}{Algoritmo}
+	\algrenewcommand\ALG@beginalgorithmic{\footnotesize}
+\makeatother
+
+% Inclusão dos listings na lista de algoritmos
+\makeatletter
+\patchcmd{\lst@MakeCaption}{\addcontentsline{lol}}{\addcontentsline{loa}}{}{}
+\patchcmd{\lst@MakeCaption}{\addcontentsline{lol}}{\addcontentsline{loa}}{}{}
+\AtBeginDocument{%
+  \let\c@lstlisting\c@algorithm
+  \let\thelstlisting\thealgorithm
+}
 \makeatother
 
 % ---
