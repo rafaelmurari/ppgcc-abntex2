@@ -248,6 +248,25 @@
 	\end{folhadeaprovacao}
 }
 
+\makeatletter
+\newcommand\annex{\par
+  \setcounter{chapter}{0}%
+  \setcounter{section}{0}%
+  \gdef\@chapapp{Anexo}%
+  \gdef\thechapter{\@Alph\c@chapter}}
+\makeatother
+
+\renewenvironment{anexosenv}{%
+ \cftinserthook{toc}{AAA}
+ \PRIVATEapendiceconfig{\anexoname}{\anexosname}
+ \begin{annex}
+ \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
+}{
+ \end{annex}
+ \setboolean{abntex@apendiceousecao}{false}
+ \bookmarksetup{startatroot}
+}
+
 %-----------------------
 % Sumário
 %-----------------------
@@ -286,6 +305,16 @@
 }
 \let\orig@chapter\chapter
 \g@addto@macro\appendix{\let\chapter\appendix@chapter}
+
+\newcommand\annex@chapter[1]{%
+    \refstepcounter{chapter}%
+    \def\app@ct{ANEXO \@Alph\c@chapter \space - #1}
+    \orig@chapter*{\app@ct}%
+    \markboth{\MakeUppercase{\app@ct}}{\MakeUppercase{\app@ct}}
+    \addcontentsline{toc}{chapter}{\app@ct}%
+}
+\let\orig@chapter\chapter
+\g@addto@macro\annex{\let\chapter\annex@chapter}
 \makeatother
 
 % Modifica o padrão de caixa alta dos capítulos no sumário
