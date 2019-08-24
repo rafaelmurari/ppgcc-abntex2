@@ -276,6 +276,16 @@
 \renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{2.3em}}
 \renewcommand{\l@subsection}{\@dottedtocline{2}{3.8em}{3.2em}}
 \renewcommand{\l@subsubsection}{\@dottedtocline{3}{7.0em}{4.1em}}
+
+\newcommand\appendix@chapter[1]{%
+    \refstepcounter{chapter}%
+    \def\app@ct{APÊNDICE \@Alph\c@chapter \space - #1}
+    \orig@chapter*{\app@ct}%
+    \markboth{\MakeUppercase{\app@ct}}{\MakeUppercase{\app@ct}}
+    \addcontentsline{toc}{chapter}{\app@ct}%
+}
+\let\orig@chapter\chapter
+\g@addto@macro\appendix{\let\chapter\appendix@chapter}
 \makeatother
 
 % Modifica o padrão de caixa alta dos capítulos no sumário
