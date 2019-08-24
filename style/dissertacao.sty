@@ -209,7 +209,10 @@
 	\end{folhadeaprovacao}
 }
 
+\newbool{hierarchicalToc}
+\setbool{hierarchicalToc}{true}
 
+\ifbool{hierarchicalToc}{
 %-----------------------
 % Anexos
 %-----------------------
@@ -295,7 +298,7 @@
       {\tempf@rtoc}}%
   }
 \makeatother
-
+}
 
 %-----------------------
 % Lista de Abreviaturas
