@@ -1,4 +1,4 @@
-PREFIX = dissertacao
+PREFIX = monograph
 PDFLATEX = pdflatex
 BIBTEX = bibtex
 
