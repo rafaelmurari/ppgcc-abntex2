@@ -80,29 +80,13 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{Inserir o Título do Trabalho}
-\autor{Nome do Autor}
-\local{Inserir Cidade}
-\data{2019}
-\orientador{Prof. Dr. ...}
-%\coorientador{Equipe \abnTeX}
-\instituicao{%
-  UNIVERSIDADE ESTADUAL PAULISTA "Júlio de Mesquita Filho" -- UNESP
-}
-\tipotrabalho{Dissertação (Mestrado)}
-% O preambulo deve conter o tipo do trabalho, o objetivo, 
-% o nome da instituição e a área de concentração 
-\preambulo{[Dissertação/Tese] apresentada como parte dos requisitos para
-obtenção do título de [Mestre/Doutor] em Ciência da Computação, junto ao
-Programa de Pós-Graduação em Ciência da Computação, do Instituto de
-[Inserir o Instituto] da Universidade Estadual Paulista "Júlio de Mesquita
-Filho", Câmpus de [Inserir cidade].}
+\input{info/general}
 % ---
 
 % ---
 % Termos definidos pelo usuário, tais como palavras em itálico, negrito, ...
 % ---
-\input{style/definitions}
+\input{content/definitions}
 
 % ---
 % Configurações de aparência do PDF final
@@ -114,17 +98,17 @@ Filho", Câmpus de [Inserir cidade].}
 \makeatletter
 \hypersetup{
     %pagebackref=true,
-		pdftitle={\@title}, 
-		pdfauthor={\@author},
+    pdftitle={\@title}, 
+    pdfauthor={\@author},
     pdfsubject={\imprimirpreambulo},
-	  pdfcreator={LaTeX with abnTeX2},
-		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
-		colorlinks=true,       		% false: boxed links; true: colored links
+    pdfcreator={LaTeX with abnTeX2},
+    pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
+    colorlinks=true,       		% false: boxed links; true: colored links
     linkcolor=black,          	% color of internal links
     citecolor=black,        		% color of links to bibliography
     filecolor=black,      		% color of file links
-		urlcolor=black,
-		bookmarksdepth=4
+    urlcolor=black,
+    bookmarksdepth=4
 }
 \makeatother
 % --- 
@@ -182,17 +166,7 @@ Filho", Câmpus de [Inserir cidade].}
 % Inserir a ficha bibliografica
 % ---
 
-% Isto é um exemplo de Ficha Catalográfica, ou ``Dados internacionais de
-% catalogação-na-publicação''. Você pode utilizar este modelo como referência. 
-% Porém, provavelmente a biblioteca da sua universidade lhe fornecerá um PDF
-% com a ficha catalográfica definitiva após a defesa do trabalho. Quando estiver
-% com o documento, salve-o como PDF no diretório do seu projeto e substitua todo
-% o conteúdo de implementação deste arquivo pelo comando abaixo:
-%
-%\begin{fichacatalografica}
-%	\includepdf{metadata/ficha_catalografica.pdf}
-%\end{fichacatalografica}
-
+\input{metadata/index_card}
 
 % ---
 % Inserir folha de aprovação
@@ -210,38 +184,16 @@ Filho", Câmpus de [Inserir cidade].}
 \imprimirfolhadeaprovacao
 
 % ---
-% Dedicatória
-% ---
-%\begin{dedicatoria}
-%   \vspace*{\fill}
-%   \centering
-%   \noindent
-%   \textit{ Este trabalho é dedicado às crianças adultas que,\\
-%   quando pequenas, sonharam em se tornar cientistas.} \vspace*{\fill}
-%\end{dedicatoria}
+% Dedicatória e Agradecimentos
 % ---
 
-% ---
-% Agradecimentos
-% ---
-\begin{agradecimentos}
-
-Agradeço a ...
-
-
-
-\end{agradecimentos}
-% ---
+\input{info/personal}
 
 % ---
 % RESUMOS
 % ---
 
-% resumo em português
-\include{chapters/resumo}
-
-% resumo em inglês
-\include{chapters/abstract}
+\input{content/pretextual}
 
 % ---
 % inserir lista de ilustrações
@@ -263,17 +215,7 @@ Agradeço a ...
 % inserir lista de abreviaturas e siglas
 % ---
 
-% SUGESTÃO: crie uma nova entrada no arquivo definitions presente no diretório
-% style e insira nesta seção, conforme os exemplos apresentados logo abaixo,
-% assim será possível reutilizar o termo no texto e reduzir a verbosidade
-% deste.
-\begin{siglas}
-  \item[API] \API
-  \item[DRAM] \DRAM
-  \item[HDD] \HDD
-	\item[SSD] \SSD
-\end{siglas}
-% ---
+\input{content/abbreviations}
 
 % ---
 % inserir o sumario
@@ -288,35 +230,7 @@ Agradeço a ...
 % ----------------------------------------------------------
 \textual
 
-% ----------------------------------------------------------
-% Introdução
-% ----------------------------------------------------------
-\include{chapters/chapter01}
-
-% ----------------------------------------------------------
-% Fundamentação Teórica
-% ----------------------------------------------------------
-\include{chapters/chapter02}
-
-% ----------------------------------------------------------
-% Trabalhos Relacionados
-% ----------------------------------------------------------
- \include{chapters/chapter03} 
-
-% ----------------------------------------------------------
-% Solução Proposta
-% ----------------------------------------------------------
-\include{chapters/chapter04}
-
-% ----------------------------------------------------------
-% Avaliação Experimental
-% ----------------------------------------------------------
-\include{chapters/chapter05}
-
-% ----------------------------------------------------------
-% Conclusão
-% ----------------------------------------------------------
-\include{chapters/chapter06}
+\input{content/textual}
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
@@ -329,58 +243,10 @@ Agradeço a ...
 \bibliography{references}
 
 % ----------------------------------------------------------
-% Apêndices
+% Apêndices e Anexos
 % ----------------------------------------------------------
 
-% ---
-% Início dos apêndices
-% ---
-\begin{apendicesenv}
-
-% Imprime uma página indicando o início dos apêndices
-%\partapendices*
-
-% ----------------------------------------------------------
-% Apêndice A
-% ----------------------------------------------------------
-\include{chapters/appendixA}
-
-% ----------------------------------------------------------
-% Apêndice B
-% ----------------------------------------------------------
-\include{chapters/appendixB}
-
-% ---
-% Término dos apêndices
-% ---
-\end{apendicesenv}
-
-% ----------------------------------------------------------
-% Anexos
-% ----------------------------------------------------------
-
-% ---
-% Início dos anexos
-% ---
-\begin{anexosenv}
-
-% Imprime uma página indicando o início dos anexos
-%\partanexos*
-
-% ----------------------------------------------------------
-% Anexo A
-% ----------------------------------------------------------
-\include{chapters/annexA}
-
-% ----------------------------------------------------------
-% Anexo B
-% ----------------------------------------------------------
-\include{chapters/annexB}
-
-% ---
-% Término dos anexos
-% ---
-\end{anexosenv}
+\input{content/postextual}
 
 %---------------------------------------------------------------------
 % INDICE REMISSIVO

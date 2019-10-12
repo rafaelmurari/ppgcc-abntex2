@@ -12,4 +12,4 @@ $(PREFIX).pdf: $(PREFIX).tex
 
 clean:
 	rm *.{log,toc,aux,bbl,blg,pdf,idx,lot,lof}
-	rm chapters/*.aux
+	rm content/*/*.aux
