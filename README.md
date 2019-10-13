@@ -9,6 +9,7 @@ São José de Rio Preto, acessível em
 dissertação/tese.**
 
 Segue abaixo a organização deste repositório.
+
 .
 ├── code
 │   └── hash.c
