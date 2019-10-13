@@ -68,6 +68,11 @@
 	\end{minipage}%
 }
 
+\newcommand{\ifarg}[4]{%
+  \ifthenelse{\equal{#1}{#2}}{#3}{#4}%
+}
+
+
 %-----------------------
 % Macros para inserir informações
 %-----------------------
@@ -119,6 +124,18 @@
 
 \input{info/general}
 
+
+%-----------------------
+% Preâmbulo
+%-----------------------
+
+\preambulo{\imprimirtipotrabalho~apresentada como parte dos requisitos para
+obtenção do título de \imprimirtitulacao~em Ciência da Computação, junto ao
+Programa de Pós-Graduação em Ciência da Computação, do \imprimirinstituto~da
+Universidade Estadual Paulista "Júlio de Mesquita Filho", Câmpus de
+~\imprimirlocal.}
+
+
 %-----------------------
 % Capa
 %-----------------------
@@ -135,7 +152,7 @@
 		\textbf{
 		UNIVERSIDADE ESTADUAL PAULISTA\\
 		"JÚLIO DE MESQUITA FILHO"\\
-		Câmpus de [Inserir Cidade]}
+		Câmpus de \imprimirlocal}
 		\end{minipage}
 
     \vspace*{3cm}
@@ -149,7 +166,7 @@
     \textnormal{\large{\imprimirlocal}}
     
     \vspace*{-4mm}
-    \textnormal{\large\imprimirdata}
+    \textnormal{\large\imprimirano}
     
     \vspace*{1cm}
   \end{capa}
@@ -174,6 +191,8 @@
 
   \setlength{\rightskip}{0.2cm}
   \hfill\Large\imprimirorientadorRotulo~\imprimirorientador\par
+	\ifarg{\imprimircoorientador}{}{}{
+	\Large\imprimircoorientadorRotulo~\imprimircoorientador\par}
 
   \vspace*{\fill}
 
@@ -182,8 +201,9 @@
     \begin{minipage}{.5\textwidth}
       \SingleSpacing
        \normalsize\imprimirpreambulo
+			 \ifarg{\imprimirfinanciadora}{}{}{
 			 \\ \\
-			 \normalsize{Financiadora: ...}
+			 \normalsize{Financiadora: \imprimirfinanciadora}}
     \end{minipage}
     \vspace*{\fill}
   }
@@ -192,7 +212,7 @@
     \textnormal{\large{\imprimirlocal}}
 
     \vspace*{-4mm}
-    \textnormal{\large{\imprimirdata}}
+    \textnormal{\large{\imprimirano}}
   \end{center}
   \vspace*{1cm}
 
@@ -221,8 +241,9 @@
 			\hspace{.45\textwidth}
 			\begin{minipage}{.5\textwidth}
 					\imprimirpreambulo
-					\\ \\
-					Financiadora: ... \\
+			    \ifarg{\imprimirfinanciadora}{}{}{
+			    \\ \\
+			    \normalsize{Financiadora: \imprimirfinanciadora}}
 			\end{minipage}%
 			\vspace*{\fill}
 		 
@@ -231,17 +252,17 @@
 
 			\begin{flushright}
 				\begin{itemize}
-					\item Prof. Dr. ... (Orientador)\\
-								Departamento de ...\\
-								Universidade ...\\
-				
-					\item Prof. Dr. ...\\
-								Instituto de ...\\
-								Universidade ...\\
+					\item \imprimirnomeum \\
+								\imprimirinstitutoum \\
+								\imprimirinstituicaoum \\
 
-					\item Prof. Dr. ...\\
-								Departamento de ...\\
-								Universidade ...
+					\item \imprimirnomedois \\
+								\imprimirinstitutodois \\
+								\imprimirinstituicaodois \\
+
+					\item \imprimirnomedois \\
+								\imprimirinstitutodois \\
+								\imprimirinstituicaodois \\
 				\end{itemize}
 			\end{flushright}
 			\vspace*{\fill}
@@ -252,15 +273,16 @@
 			{\normalfont{\large{\imprimirlocal}}}
 			
 			\vspace*{2mm}
-			{\normalfont{\large{28 de fevereiro de 2019}}}
+			{\normalfont{\large{\imprimirdata}}}
 			\vspace*{1cm}
 		\end{center}
 		
 	\end{folhadeaprovacao}
 }
 
+
 \newbool{hierarchicalToc}
-\setbool{hierarchicalToc}{true}
+\ifarg{\estilosumario}{hierarquico}{\setbool{hierarchicalToc}{true}}{}
 
 \ifbool{hierarchicalToc}{
 %-----------------------
