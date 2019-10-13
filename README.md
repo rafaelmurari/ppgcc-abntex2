@@ -11,46 +11,46 @@ dissertação/tese.**
 Segue abaixo a organização deste repositório.
 
 .
-├── code
-│   └── hash.c
-├── content
-│   ├── abbreviations.tex
-│   ├── definitions.tex
-│   ├── postextual
-│   │   ├── annexA.tex
-│   │   ├── annexB.tex
-│   │   ├── appendixA.tex
-│   │   └── appendixB.tex
-│   ├── postextual.tex
-│   ├── pretextual
-│   │   ├── abstract.tex
-│   │   ├── acknowledgments.tex
-│   │   ├── dedication.tex
-│   │   └── resumo.tex
-│   ├── pretextual.tex
-│   ├── textual
-│   │   ├── chapter01.tex
-│   │   ├── chapter02.tex
-│   │   ├── chapter03.tex
-│   │   ├── chapter04.tex
-│   │   ├── chapter05.tex
-│   │   └── chapter06.tex
-│   └── textual.tex
-├── images
-│   ├── library1.jpg
-│   ├── library2.jpg
-│   └── unesplogo.pdf
-├── info
-│   └── general.tex
-├── Makefile
-├── metadata
-│   └── index_card.tex
-├── monograph.tex
-├── README.md
-├── references.bib
-├── results
-└── style
-&nbsp; &nbsp; &nbsp; └── monograph.sty
+├── code  
+│   └── hash.c  
+├── content  
+│   ├── abbreviations.tex  
+│   ├── definitions.tex  
+│   ├── postextual  
+│   │   ├── annexA.tex  
+│   │   ├── annexB.tex  
+│   │   ├── appendixA.tex  
+│   │   └── appendixB.tex  
+│   ├── postextual.tex  
+│   ├── pretextual  
+│   │   ├── abstract.tex  
+│   │   ├── acknowledgments.tex  
+│   │   ├── dedication.tex  
+│   │   └── resumo.tex  
+│   ├── pretextual.tex  
+│   ├── textual  
+│   │   ├── chapter01.tex  
+│   │   ├── chapter02.tex  
+│   │   ├── chapter03.tex  
+│   │   ├── chapter04.tex  
+│   │   ├── chapter05.tex  
+│   │   └── chapter06.tex  
+│   └── textual.tex  
+├── images  
+│   ├── library1.jpg  
+│   ├── library2.jpg  
+│   └── unesplogo.pdf  
+├── info  
+│   └── general.tex  
+├── Makefile  
+├── metadata  
+│   └── index_card.tex  
+├── monograph.tex  
+├── README.md  
+├── references.bib  
+├── results  
+└── style  
+&nbsp; &nbsp; &nbsp; └── monograph.sty  
 
 
 * O diretório content contém: os elementos pré textuais (agradecimentos,
