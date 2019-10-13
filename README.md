@@ -11,24 +11,24 @@ dissertação/tese.**
 Segue abaixo a organização deste repositório.
 
 .  
-├── code  
+├── **code**  
 │   └── hash.c  
-├── content  
+├── **content**  
 │   ├── abbreviations.tex  
 │   ├── definitions.tex  
-│   ├── postextual  
+│   ├── **postextual**  
 │   │   ├── annexA.tex  
 │   │   ├── annexB.tex  
 │   │   ├── appendixA.tex  
 │   │   └── appendixB.tex  
 │   ├── postextual.tex  
-│   ├── pretextual  
+│   ├── **pretextual**  
 │   │   ├── abstract.tex  
 │   │   ├── acknowledgments.tex  
 │   │   ├── dedication.tex  
 │   │   └── resumo.tex  
 │   ├── pretextual.tex  
-│   ├── textual  
+│   ├── **textual**  
 │   │   ├── chapter01.tex  
 │   │   ├── chapter02.tex  
 │   │   ├── chapter03.tex  
@@ -36,20 +36,20 @@ Segue abaixo a organização deste repositório.
 │   │   ├── chapter05.tex  
 │   │   └── chapter06.tex  
 │   └── textual.tex  
-├── images  
+├── **images**  
 │   ├── library1.jpg  
 │   ├── library2.jpg  
 │   └── unesplogo.pdf  
-├── info  
+├── **info**  
 │   └── general.tex  
 ├── Makefile  
-├── metadata  
+├── **metadata**  
 │   └── index_card.tex  
 ├── monograph.tex  
 ├── README.md  
 ├── references.bib  
-├── results  
-└── style  
+├── **results**  
+└── **style**  
 &nbsp; &nbsp; &nbsp; └── monograph.sty  
 
 
