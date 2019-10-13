@@ -10,7 +10,7 @@ dissertação/tese.**
 
 Segue abaixo a organização deste repositório.
 
-.
+.  
 ├── code  
 │   └── hash.c  
 ├── content  
