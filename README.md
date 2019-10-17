@@ -79,7 +79,9 @@ diretório style.
 # Modo de Uso
 
 Para utilizar este template basta clonar o repositório e executar o comando
-make, conforme as instruções abaixo.
+make, conforme as instruções abaixo. Também é possível utilizá-lo através do
+Overleaf, bastando baixar este repositório no formato zip e fazer o upload do
+mesmo na plataforma.
 
 ```bash
 $ git clone https://github.com/rafaelmurari/ppgcc-abntex2.git
