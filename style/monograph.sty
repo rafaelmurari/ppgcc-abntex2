@@ -34,6 +34,7 @@
 \usepackage{pifont}
 \usepackage{amsmath}
 \usepackage{pdfpages}
+\usepackage{chngcntr}		% ajuste numeração footnote
 
 
 %-----------------------
@@ -72,6 +73,8 @@
   \ifthenelse{\equal{#1}{#2}}{#3}{#4}%
 }
 
+% Não reseta a numeração dos footnotes a cada capítulo
+\counterwithout*{footnote}{chapter}
 
 %-----------------------
 % Macros para inserir informações
