@@ -104,6 +104,7 @@ textual, postextual}/.
 4 - Insira as referências bibliográficas no arquivo references.bib.
 
 5 - Atualize a seção de agradecimentos presente no arquivo
-/content/pretextual/acknowledgments.tex. **OBS: discentes que foram bolsistas
-durante o curso devem inserir uma nota exigida pela CAPES e FAPESP. Esta nota
-se encontra no modelo disponibilizado pela Biblioteca (link acima).**
+/content/pretextual/acknowledgments.tex. **OBS: discentes que foram bolsistas (
+CAPES, FAPESP ou outra instituição) durante o curso devem inserir uma nota no
+final da Seção de Agradecimentos. Esta nota se encontra no modelo disponibilizado
+pela Biblioteca (link acima).**
